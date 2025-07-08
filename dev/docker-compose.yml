@@ -38,6 +38,15 @@ services:
       - ${MAILCATCHER_HOST_SMTP_PORT}:1025
       - ${MAILCATCHER_WEB_PORT}:1080
 
+  simple-storage-service-s3ninja:
+    container_name: simple-storage-service-s3ninja
+    image: scireum/s3-ninja:latest
+    volumes:
+      - s3_data:/home/sirius/data
+    ports:
+      - ${S3NINJA_HOST_PORT}:9000
+
 volumes:
   db_data:
   pgadmin_data:
+  s3_data:
