@@ -1,4 +1,4 @@
 ﻿<Solution>
-  <Project Path="YoVPM.Yggdrasil.Core\YoVPM.Yggdrasil.Core.csproj" />
   <Project Path="YoVPM.Yggdrasil.Api\YoVPM.Yggdrasil.Api.csproj" />
+  <Project Path="YoVPM.Yggdrasil.Core\YoVPM.Yggdrasil.Core.csproj" />
 </Solution>
