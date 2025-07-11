@@ -38,7 +38,7 @@ internal static class AppOpenApiExtenstion
         });
 
         // Search code base for [ApiVersion(#.0)]
-        string[] versions = ["v1", "v2"];
+        string[] versions = ["v1"];
         foreach (var description in versions)
         {
             builder.Services.AddOpenApi(description, options =>
