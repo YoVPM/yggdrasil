@@ -14,13 +14,6 @@ internal static class AppOpenApiExtenstion
         {
             options.DefaultFonts = false;
             options.Title = "YoVPM Yggdrasil API Reference";
-            // TODO: add default berar
-            // TODO: order actions by
-            //     options.OrderActionsBy(apiDesc => {
-            //         var priority = apiDesc.ActionDescriptor.RouteValues["controller"]!.Contains("Debug") ? "_" : "";
-            //         return $"{priority}{apiDesc.ActionDescriptor.RouteValues["controller"]}_{apiDesc.HttpMethod}";
-            //     });
-            // .WithHttpBearerAuthentication(bearer => bearer.Token = "");
         });
 
         if (app.Environment.IsDevelopment())
@@ -43,7 +36,7 @@ internal static class AppOpenApiExtenstion
         {
             options.GroupNameFormat = "'v'VVV";
         });
-        
+
         // Search code base for [ApiVersion(#.0)]
         string[] versions = ["v1", "v2"];
         foreach (var description in versions)
