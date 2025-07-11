@@ -1,12 +1,26 @@
+using Asp.Versioning;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Scalar.AspNetCore;
+using YoVPM.Yggdrasil.Api;
+using YoVPM.Yggdrasil.Api.Extenstion;
 using YoVPM.Yggdrasil.Core.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+    options.Conventions.Add(new RoutePrefixConvention(new RouteAttribute("v{version:apiVersion}"))));
 
-builder.Services.AddOpenApi();
+builder.Services.AddProblemDetails();
+
+var apiVersioning = builder.Services.AddApiVersioning(options =>
+    {
+        options.ReportApiVersions = true;
+        options.UnsupportedApiVersionStatusCode = 501;
+        options.ApiVersionReader = new UrlSegmentApiVersionReader();
+    })
+    .AddMvc();
+
+builder.AddAppOpenApi(apiVersioning);
 
 builder.Services.AddDbContext<YggdrasilDbContext>(options =>
 {
@@ -17,10 +31,6 @@ var app = builder.Build();
 
 app.MapControllers();
 
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-    app.MapScalarApiReference();
-}
+app.UseAppOpenApi();
 
 app.Run();
