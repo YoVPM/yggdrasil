@@ -19,8 +19,4 @@
       <ProjectReference Include="..\YoVPM.Yggdrasil.Core\YoVPM.Yggdrasil.Core.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Controlles\" />
-    </ItemGroup>
-
 </Project>
