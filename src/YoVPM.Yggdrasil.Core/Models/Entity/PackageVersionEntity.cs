@@ -10,6 +10,10 @@ public sealed class PackageVersionEntity : EntityBase
     public string? DisplayName { get; set; }
     public string? Description { get; set; }
 
+    public required string AuthorName { get; set; }
+    public required string AuthorEmail { get; set; }
+    public string? AuthorUrl { get; set; }
+
     public string? CompatibleUnityVersion { get; set; }
     public string? CompatibleUnityRelease { get; set; }
 
@@ -20,10 +24,6 @@ public sealed class PackageVersionEntity : EntityBase
 
     public string? Llicense { get; set; }
     public string? LicenseUrl { get; set; }
-
-    public string AuthorName { get; set; }
-    public string AuthorEmail { get; set; }
-    public string? AuthorUrl { get; set; }
 
     public string? UnityPackageInteralType { get; set; }
 
