@@ -21,7 +21,9 @@ public sealed class PackageVersionEntity : EntityBase
     public string? Llicense { get; set; }
     public string? LicenseUrl { get; set; }
 
-    // TODO: Author
+    public string AuthorName { get; set; }
+    public string AuthorEmail { get; set; }
+    public string? AuthorUrl { get; set; }
 
     public string? UnityPackageInteralType { get; set; }
 

@@ -7,6 +7,10 @@ public sealed class PackageEntity : EntityBase
     public string? DisplayName { get; set; }
     public string? Description { get; set; }
 
+    public string AuthorName { get; set; }
+    public string AuthorEmail { get; set; }
+    public string? AuthorUrl { get; set; }
+
     public string? CompatibleUnityVersion { get; set; }
     public string? CompatibleUnityRelease { get; set; }
 
