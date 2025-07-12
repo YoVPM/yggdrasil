@@ -22,7 +22,7 @@ public sealed class PackageVersionEntity : EntityBase
 
     public string[] Keywords { get; set; } = [];
 
-    public string? Llicense { get; set; }
+    public string? License { get; set; }
     public string? LicenseUrl { get; set; }
 
     public string? UnityPackageInteralType { get; set; }
