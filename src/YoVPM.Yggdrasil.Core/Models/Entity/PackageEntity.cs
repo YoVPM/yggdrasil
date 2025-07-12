@@ -22,7 +22,7 @@ public sealed class PackageEntity : EntityBase
 
     public bool? HideInEditor { get; set; }
 
-    public required PackageRepositoryEntity Repository { get; set; }
+    public PackageRepositoryEntity? Repository { get; set; }
     public required Guid RepositoryId { get; set; }
 
     public required string LatestVersion { get; set; }
