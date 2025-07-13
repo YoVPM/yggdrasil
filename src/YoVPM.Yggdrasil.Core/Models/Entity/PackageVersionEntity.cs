@@ -25,7 +25,7 @@ public sealed class PackageVersionEntity : EntityBase
     public string? License { get; set; }
     public string? LicenseUrl { get; set; }
 
-    public string? UnityPackageInteralType { get; set; }
+    public string? UnityPackageInternalType { get; set; }
 
     public ICollection<PackageVersionSampleEntity> Samples { get; set; } = [];
 
