@@ -7,7 +7,7 @@ public sealed class PackageVersionEntity : EntityBase
     public required string Name { get; set; }
     public required string Version { get; set; }
 
-    public string? DisplayName { get; set; }
+    public required string DisplayName { get; set; }
     public string? Description { get; set; }
 
     public required string AuthorName { get; set; }
