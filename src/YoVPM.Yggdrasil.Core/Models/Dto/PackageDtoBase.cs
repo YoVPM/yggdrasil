@@ -1,13 +1,18 @@
-﻿namespace YoVPM.Yggdrasil.Core.Models.Entity;
+﻿using System.ComponentModel.DataAnnotations;
 
-public sealed class PackageEntity : EntityBase
+namespace YoVPM.Yggdrasil.Core.Models.Dto;
+
+public class PackageDtoBase
 {
+    [Required]
     public required string Name { get; set; }
 
     public string? DisplayName { get; set; }
     public string? Description { get; set; }
 
+    [Required]
     public required string AuthorName { get; set; }
+    [Required]
     public required string AuthorEmail { get; set; }
     public string? AuthorUrl { get; set; }
 
@@ -21,11 +26,14 @@ public sealed class PackageEntity : EntityBase
     public string? UnityPackageInternalType { get; set; }
 
     public bool? HideInEditor { get; set; }
+}
 
-    public PackageRepositoryEntity? Repository { get; set; }
-    public required Guid RepositoryId { get; set; }
-
+public class PackageDto : PackageDtoBase
+{
     public string? LatestVersion { get; set; }
+}
 
-    public ICollection<PackageVersionEntity>? Versions { get; set; }
+public class PackageDtoBaseWithVersion : PackageDto
+{
+    public PackageVersionDto[] Versions { get; set; } = [];
 }

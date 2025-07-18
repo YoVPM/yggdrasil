@@ -41,10 +41,10 @@ public sealed class PackageVersionEntity : EntityBase
     public bool? HideInEditor { get; set; }
 
     public required Guid PackageId { get; set; }
-    public required PackageEntity Package { get; set; }
+    public PackageEntity? Package { get; set; }
 
     public required Guid FileId { get; set; }
-    public required FileEntity File { get; set; }
+    public FileEntity? File { get; set; }
 }
 
 public sealed class PackageVersionDependencyEntity
